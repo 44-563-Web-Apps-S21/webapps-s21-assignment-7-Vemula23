@@ -4,10 +4,10 @@
   <title>Countdown page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxvaluecdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.minvalue.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.minvalue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.minvalue.js"></script>
+  <script src="https://maxvaluecdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.minvalue.js"></script>
 </head>
 <body>
 <div class="container">
@@ -16,24 +16,24 @@
     <p id="target">Your time</p>
     <p id="countdown">Count</p>
 
-    <button class="btn btn-primary" onclick="Start()" >Start Timer</button>
-    <button id="React" class="btn btn-success" onclick="Save()">React Now</button>
+    <button class="btn btn-danger" onclick="startTime()" >Start Timer</button>
+    <button id="start" class="btn btn-warning" onclick="recordstart()">React Now</button>
 </div>
   <script> 
         myTime = undefined;
-        function recordReact() {
+        function recordstart() {
         myTime = Date.now();
         console.log("Time : " + myTime);
         }
 
-        function getRandomIntInclusive(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1) + min);
+        function getRandominvaluetInclusive(minvalue, maxvalue) {
+            minvalue = Math.ceil(minvalue);
+            maxvalue = Math.floor(maxvalue);
+            return Math.floor(Math.random() * (maxvalue - minvalue + 1) + minvalue);
         }
 
         function startTime() {
-        let countdown = getRandomIntInclusive(2, 10);
+        let countdown = getRandominvaluetInclusive(2, 10);
         console.log(countdown);
 
         for (let i = 0; i < 3; i++) {
@@ -46,15 +46,15 @@
             console.log(i)
             if (myTime == undefined) {
             document.getElementById("target").innerHTML = "Too Slow"
-            document.getElementById("React").classList.add("btn-brown");
-            document.getElementById("React").classList.remove("btn-success");
+            document.getElementById("start").classList.add("btn-brown");
+            document.getElementById("start").classList.remove("btn-danger");
             }
             else {
             var buttonTime = Date.now();
             var elapsedTime = buttonTime - myTime;
             document.getElementById("target").innerHTML = "Time was : " + elapsedTime;
-            document.getElementById("React").classList.add("btn-primary");
-            document.getElementById("React").classList.remove("btn-success");
+            document.getElementById("start").classList.add("btn-danger");
+            document.getElementById("start").classList.remove("btn-warning");
             }
         }, (3 - 1)*1000)
         }
