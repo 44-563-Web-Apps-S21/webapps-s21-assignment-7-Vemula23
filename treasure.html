@@ -101,6 +101,16 @@
             y1 = j;
             break;
         }
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++)
+            if (a[i][j] == pos2) {
+            x2 = i;
+            y2 = j;
+            break;
+              }
+            }
+            let distance = Math.abs(x2 - x1) + Math.abs(y2 - y1);
+            return distance;
 } 
     </script>       
 </html>
